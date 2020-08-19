@@ -1,0 +1,102 @@
+.animated-grid {
+  height: 95vh;
+
+  display: grid;
+  gap: 1rem;
+
+  /* explicit grid - using grid template areas */
+  grid-template-areas:
+    "a b c d"
+    "l x x e"
+    "k x x f"
+    "j i h g";
+
+  /* grid-template-rows: repeat(auto-fit, 25%); */
+  /* grid-template-rows: repeat(auto-fit, minmax(240px, 1fr)); */
+  /* grid-template-columns: 240px auto auto 240px; */
+  grid-template-rows: repeat(auto-fit, 240px auto auto 240px);
+  grid-template-columns: repeat(auto-fit, 240px auto auto 240px);
+  /* grid-template-columns: repeat(auto-fit, 25%); */
+
+  /* help set anim delay */
+  --stager-delay: 150ms;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+    filter: hue-rotate(180deg);
+  }
+  to {
+    opacity: 100;
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+}
+
+.card {
+  background-color: rgb(26, 243, 147);
+  animation: cardEntrance 700ms ease-out;
+  /* makes sure the cards are invisible before animation begins */
+  animation-fill-mode: backwards;
+}
+
+/* using nth child selector  */
+.card:nth-child(1) {
+  /* applying grid area a to this selected element */
+  /* so doens't matter where it is, it gets organized according to grid template area */
+  grid-area: a;
+  animation-delay: calc(1 * var(--stager-delay));
+}
+
+.card:nth-child(2) {
+  grid-area: b;
+  animation-delay: calc(2 * var(--stager-delay));
+}
+
+.card:nth-child(3) {
+  grid-area: c;
+  animation-delay: calc(3 * var(--stager-delay));
+}
+
+.card:nth-child(4) {
+  grid-area: d;
+  animation-delay: calc(4 * var(--stager-delay));
+}
+.card:nth-child(5) {
+  grid-area: e;
+  animation-delay: calc(5 * var(--stager-delay));
+}
+.card:nth-child(6) {
+  grid-area: f;
+  animation-delay: calc(6 * var(--stager-delay));
+}
+.card:nth-child(7) {
+  grid-area: g;
+  animation-delay: calc(7 * var(--stager-delay));
+}
+.card:nth-child(8) {
+  grid-area: h;
+  animation-delay: calc(8 * var(--stager-delay));
+}
+.card:nth-child(9) {
+  grid-area: i;
+  animation-delay: calc(9 * var(--stager-delay));
+}
+.card:nth-child(10) {
+  grid-area: j;
+  animation-delay: calc(10 * var(--stager-delay));
+}
+.card:nth-child(11) {
+  grid-area: k;
+  animation-delay: calc(11 * var(--stager-delay));
+}
+.card:nth-child(12) {
+  grid-area: l;
+  animation-delay: calc(12 * var(--stager-delay));
+}
+.card:last-child {
+  grid-area: x;
+  animation-delay: calc(13 * var(--stager-delay));
+}
