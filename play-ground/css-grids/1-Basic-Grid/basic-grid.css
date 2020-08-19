@@ -1,0 +1,28 @@
+.basic-grid {
+  display: grid;
+  gap: 1rem;
+
+  /* 1 fractional unit = 100% */
+  /* hard coded 12 columns */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+  /* grid-template-columns: repeat(12, 1fr); */
+  /* grid-template-columns: repeat(12, minmax(240px, 1fr)); */
+
+  /* create implicit grid using auto-fit not auto-fill*/
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  /* sets height */
+  grid-auto-rows: 240px;
+}
+
+@media screen and (min-width: 600px) {
+  .card-tall {
+    /* tell a card to span 2 rows from its current position */
+    grid-row: span 2 / auto;
+  }
+
+  .card-wide {
+    /* tell a card to span 2 rows from its current position */
+    grid-column: span 2 / auto;
+  }
+}
