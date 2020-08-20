@@ -4,12 +4,12 @@
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
   --bg-primary: #23232e;
-  --bg-secondary: red;
+  --bg-secondary: #141418;
   --transition-speed: 600ms;
 }
 body {
-  color: black;
-  background-color: white;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
   margin: 0;
   padding: 0;
 }
