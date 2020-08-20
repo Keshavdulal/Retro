@@ -1,0 +1,212 @@
+/* Theme Code */
+.theme-icon {
+  display: none;
+}
+
+.dark #darkIcon {
+  display: block;
+}
+
+.light #lightIcon {
+  display: block;
+}
+
+.solar #solarIcon {
+  display: block;
+}
+
+/* custom navbar */
+.navbar {
+  /* stays in the same places despite of user-scroll */
+  position: fixed;
+  background-color: #23232e;
+  -webkit-transition: width 200ms ease;
+  transition: width 200ms ease;
+  overflow: scroll;
+}
+
+.navbar :hover .logo img {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item :last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5rem;
+  text-decoration: none;
+  color: #b6b6b6;
+  -webkit-filter: grayscale(100%) opacity(0.7);
+          filter: grayscale(100%) opacity(0.7);
+  -webkit-transition: 600ms;
+  transition: 600ms;
+  /* remove color upon hover */
+}
+
+.nav-link :hover {
+  -webkit-filter: grayscale(0%) opacity(1);
+          filter: grayscale(0%) opacity(1);
+  background: #141418;
+  color: #ececec;
+}
+
+.nav-link img {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+  /* coloring the icons upon hover animation */
+  /* color: pink; */
+  -webkit-transition: 600ms;
+  transition: 600ms;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+/* logo customization */
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #ececec;
+  background: #141418;
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.logo img {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 600ms;
+  transition: -webkit-transform 600ms;
+  transition: transform 600ms;
+  transition: transform 600ms, -webkit-transform 600ms;
+}
+
+.logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  -webkit-transition: 600ms;
+  transition: 600ms;
+}
+
+/* small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+  .logo {
+    display: none;
+  }
+  .navbar-nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .nav-link {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main {
+    margin: 0;
+  }
+}
+
+/* large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    /* same as margin left of main */
+    width: 5rem;
+    /* capture full height of viewport */
+    height: 100vh;
+  }
+  /* expand navbar upon hover & only on large screens*/
+  .navbar:hover {
+    width: 16rem;
+  }
+  .navbar:hover .link-text {
+    display: inline;
+  }
+  .navbar:hover .logo img {
+    margin-left: 11rem;
+  }
+  .navbar:hover .logo-text {
+    left: 0px;
+  }
+}
+
+:root {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  color: #b6b6b6;
+  background-color: #141418;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+main {
+  /* rem is relative to font-size on root elem. here 16x5=80px */
+  margin-left: 5rem;
+  padding: 1rem;
+}
+
+/* customize scrollbar */
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+/*# sourceMappingURL=styles.css.map */

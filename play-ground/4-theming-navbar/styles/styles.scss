@@ -1,0 +1,35 @@
+@import "./variables";
+@import "./theme";
+@import "./navbar";
+
+:root {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  color: $textPrimary;
+  background-color: $bgSecondary;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+main {
+  /* rem is relative to font-size on root elem. here 16x5=80px */
+  margin-left: 5rem;
+  padding: 1rem;
+}
+
+/* customize scrollbar */
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
